@@ -1,0 +1,344 @@
+/*! base rule */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--global-font-title);
+}
+
+p,
+li,
+a {
+  font-size: 1.6rem;
+  color: var(--global-font-color);
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/*! theme */
+:root {
+  --global-font-title: #07142e;
+  --global-font-color: #6f7f92;
+  --global-color: #2f65b9;
+  --login-icon-color: #012e6b;
+  --global-bg-color: #f8f9fa;
+}
+
+/*! layout */
+
+/*! reusable code */
+
+.btn {
+  background-color: var(--global-color);
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1.5rem 0;
+  color: var(--global-bg-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+/*? START main */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/** START left div */
+
+.left-div {
+  background-color: #012e6b;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(111, 127, 146, 0.1) 100%,
+    transparent 10%
+  );
+}
+
+.circle:nth-child(1) {
+  opacity: 0.7;
+  width: 200px;
+  height: 200px;
+  animation: circle1 5s ease infinite;
+  transition-delay: 6s;
+}
+
+.circle:nth-child(2) {
+  width: 350px;
+  height: 350px;
+  opacity: 0.6;
+  animation: circle2 5s cubic-bezier(0.61, 0.15, 0.39, 0.77) infinite;
+}
+
+.circle:nth-child(3) {
+  opacity: 0.5;
+  width: 530px;
+  height: 530px;
+  animation: circle3 5s cubic-bezier(0.81, 0, 0.57, 1.01) infinite;
+}
+
+.circle:nth-child(4) {
+  opacity: 0.4;
+  width: 700px;
+  height: 700px;
+  animation: circle4 5s cubic-bezier(0.89, 0.02, 0.6, 0.97) infinite;
+}
+
+.circle:nth-child(5) {
+  opacity: 0.3;
+  width: 1000px;
+  left: 63%;
+  height: 950px;
+  animation: circle5 5s cubic-bezier(0.97, 0.41, 0.43, 0.83) infinite;
+}
+
+@keyframes circle1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+    transition-delay: 0.4s;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes circle3 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    transition-delay: 0.6s;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes circle4 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    transition-delay: 0.7s;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes circle5 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    transition-delay: 0.8s;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.carousel-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  & h1 {
+    border: 1px solid red;
+    padding: 3rem;
+    z-index: 1;
+  }
+}
+
+/** END left div  */
+
+/** START right div  */
+
+.right-div {
+  margin: 5rem 10rem;
+  padding: 3.2rem;
+  display: grid;
+  place-items: center;
+
+  & .user-form {
+    & .form-title {
+      padding: 0.6rem 0;
+
+      & .form-title-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+
+        & .title-img {
+          width: 3rem;
+          aspect-ratio: 1;
+        }
+
+        & .title-heading {
+          font-size: 2.8rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    & .form-para {
+      margin: 1.6rem 0 3.2rem 0;
+      padding: 0 6rem;
+      line-height: 2.8rem;
+      text-align: center;
+    }
+
+    & .user-login-info {
+      & .form-label {
+        display: block;
+        margin-bottom: 1.4rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--global-font-title);
+      }
+
+      & .input-group {
+        position: relative;
+        margin-bottom: 1.6rem;
+
+        & .input-group-icon {
+          position: absolute;
+
+          & i {
+            padding: 1.84rem 2rem;
+            font-size: 1.3rem;
+            color: var(--login-icon-color);
+            color: rgb(44, 108, 187);
+          }
+
+          & .add-user {
+            padding: 1.84rem 1.65rem;
+          }
+        }
+
+        & .form-control {
+          width: 100%;
+          padding: 1.5rem 5rem;
+          outline: none;
+          border: 0.1rem solid var(--global-bg-color);
+          border-radius: 0.6rem;
+          background-color: var(--global-bg-color);
+          font-size: 1.6rem;
+        }
+
+        &:hover .form-control {
+          border-color: var(--global-font-title);
+        }
+      }
+    }
+
+    & .support-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1.6rem 0 2.4rem 0;
+
+      & .remember-me {
+        & .form-label {
+          font-size: 1.6rem;
+          font-weight: 700;
+          padding-left: 1.4rem;
+        }
+
+        & input[type="checkbox"] {
+          margin-left: 0.45rem;
+          cursor: pointer;
+          scale: 1.3;
+        }
+      }
+
+      & .forgot-password--link {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--global-color);
+      }
+    }
+
+    & .btn {
+      margin-bottom: 1.6rem;
+    }
+
+    & .dont-have--account {
+      text-align: center;
+      color: var(--global-font-title);
+      margin-top: 1.6rem;
+      font-weight: 500;
+
+      & .sign-up--link {
+        margin-left: 1.4rem;
+        font-size: 1.6rem;
+        color: var(--global-color);
+      }
+    }
+  }
+}

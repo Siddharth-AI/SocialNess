@@ -1,0 +1,45 @@
+@media (width <=1440px) {
+  .right-div {
+    margin: 0;
+
+    & .user-form {
+      & .form-para {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media (width <=768px) {
+  html {
+    font-size: 54%;
+  }
+
+  main {
+    background-color: var(--global-color);
+    grid-template-columns: 1fr;
+    place-items: center;
+    height: 100vh;
+  }
+
+  .left-div {
+    display: none;
+  }
+
+  .right-div {
+    padding: 0;
+    width: 90%;
+
+    & .user-form {
+      padding: 3rem 2rem;
+      border-radius: 0.5rem;
+      background-color: #fff;
+    }
+  }
+}
+
+@media (width <=425px) {
+  html {
+    font-size: 50%;
+  }
+}
